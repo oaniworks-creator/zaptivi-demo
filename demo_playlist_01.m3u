@@ -1,0 +1,6 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="demo_cosmos" tvg-name="COSMOS 4K" tvg-logo="https://raw.githubusercontent.com/oaniworks-creator/zaptivi-demo/main/logos/demo_logo_cosmos.png" group-title="Global Broadcasts",COSMOS 4K
+https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8
+
+#EXTINF:-1 tvg-id="demo_aurora" tvg-name="AURORA PLANET" tvg-logo="https://raw.githubusercontent.com/oaniworks-creator/zaptivi-demo/main/logos/demo_logo_aurora.png" group-title="Premier Showcase",AURORA PLANET
+https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8
