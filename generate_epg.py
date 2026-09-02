@@ -1,5 +1,6 @@
 import datetime
 import os
+import xml.sax.saxutils
 
 epg_file = os.path.join(os.path.dirname(__file__), "demo_epg.xml")
 
@@ -141,8 +142,9 @@ lines = [
 
 # Channels
 for ch in channels_data:
+    esc_name = xml.sax.saxutils.escape(ch["name"])
     lines.append(f'  <channel id="{ch["id"]}">')
-    lines.append(f'    <display-name>{ch["name"]}</display-name>')
+    lines.append(f'    <display-name>{esc_name}</display-name>')
     lines.append('  </channel>')
 
 # Programmes
@@ -158,9 +160,12 @@ for ch in channels_data:
         start_str = p_start.strftime(fmt)
         stop_str = p_stop.strftime(fmt)
         
+        esc_title = xml.sax.saxutils.escape(p_title)
+        esc_desc = xml.sax.saxutils.escape(p_desc)
+        
         lines.append(f'  <programme start="{start_str}" stop="{stop_str}" channel="{ch["id"]}">')
-        lines.append(f'    <title lang="en">{p_title}</title>')
-        lines.append(f'    <desc lang="en">{p_desc}</desc>')
+        lines.append(f'    <title lang="en">{esc_title}</title>')
+        lines.append(f'    <desc lang="en">{esc_desc}</desc>')
         lines.append('  </programme>')
         
         current = p_stop
